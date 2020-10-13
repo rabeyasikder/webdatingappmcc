@@ -20,10 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 Route::post('/user','HomeController@store');
-//Route::get('/user/{profile}','HomeController@show')->name('home.show');
-//Auth::routes();
-
 
 
 Route::get('test',function (){
@@ -41,16 +39,6 @@ Route::get('test',function (){
 
     return ($data) ? $data : null;
 });
-//Route::resource('cars','CarController');
-//Route::get('/create','CarController@create');
-//Route::get('/car/{carid}','CarController@show');
-//Route::post('/create','CarController@store');
-
-
-
-//Route::get('/customers','CustomersController@index');
-
-
 
 
 Route::get('/p/create','PostsController@create');
@@ -63,21 +51,4 @@ Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
 
-
-
-//Route::get('/', function (){
-//    $user= factory(\App\User::class)->create();
-//
-//    $user->posts()->create([
-//        'caption'=>'hello',
-//        'image'=>'',
-//        'user_id'=>1
-//    ]);
-//
-//dd($user->posts);
-//});
-
-
-
-//Route::get('/home', 'HomeController@index')->name('home');
 
